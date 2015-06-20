@@ -53,4 +53,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //Your code here..
+    }
 }
