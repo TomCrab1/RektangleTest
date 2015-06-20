@@ -10,7 +10,9 @@ public class RandomMatchmaker : Photon.MonoBehaviour
    public void Connect(Color Col)
     {
         col = Col;
+        PhotonNetwork.playerName = PlayerName;
         PhotonNetwork.ConnectUsingSettings("0.1");
+     
         inGame = true;
     }
     void Start()
@@ -33,7 +35,7 @@ public class RandomMatchmaker : Photon.MonoBehaviour
 
     void OnJoinedRoom()
     {
-        myPhotonView=GameManager.addPlayer("test", col).GetComponent<PhotonView>();
+        myPhotonView=GameManager.addPlayer(PlayerName, col).GetComponent<PhotonView>();
   
     }
 
