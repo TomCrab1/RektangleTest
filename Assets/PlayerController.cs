@@ -72,4 +72,13 @@ public class PlayerController : MonoBehaviour
         }
         //Your code here..
     }
+    void OnGUI()
+    {
+     
+        if (controllable){
+
+            GUI.Label(new Rect(Screen.width / 2 - 50, 20, 100, 20), new GUIContent(Name));
+        
+        }
+    }
 }

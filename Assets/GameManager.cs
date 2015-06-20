@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
         GameObject newPlayer = PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
         newPlayer.GetComponent<PlayerController>().controllable = true;
         newPlayer.GetComponent<PlayerController>().setColour(colour);
+        newPlayer.GetComponent<PlayerController>().Name = name;
         Camera.main.transform.parent = newPlayer.transform;
         Players.Add(new Player(name, colour, newPlayer));
         return newPlayer;
