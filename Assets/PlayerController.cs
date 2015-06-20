@@ -65,8 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             string message = colour.r.ToString() + ',' + colour.g.ToString() + ',' + colour.b.ToString();
             message += ';';
-            message += transform.position.x + ',' + transform.position.y + ',' + transform.position.z;
-            stream.SendNext(transform.rotation);
+            message += transform.position.x + ',' + transform.position.y + ',' + transform.position.z;      
             stream.SendNext(message);
         }
         if (stream.isReading)
