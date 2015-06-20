@@ -57,11 +57,18 @@ public class PlayerController : MonoBehaviour
     {
         if (stream.isWriting)
         {
-            stream.SendNext(colour);
+            string message = colour.r.ToString() + ',' + colour.g.ToString() + ',' + colour.b.ToString();
+            
+            stream.SendNext(message);
         }
         if (stream.isReading)
         {
-            setColour((Color)stream.ReceiveNext());
+            string message = (string)stream.ReceiveNext();
+            Color col = new Color();
+            col.r = float.Parse(message.Split(',')[0]);
+            col.g = float.Parse(message.Split(',')[1]);
+            col.b = float.Parse(message.Split(',')[2]);
+            setColour(col);
         }
         //Your code here..
     }

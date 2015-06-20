@@ -3,18 +3,11 @@ using System.Collections;
 
 public class ColourSelector : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public string colour;
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
     void OnMouseDown()
     {
-        this.GetComponentInParent<RandomMatchmaker>().Connect(this.GetComponent<MeshRenderer>().material.color);
+        this.GetComponentInParent<RandomMatchmaker>().Connect(colour);
         transform.parent.gameObject.SetActive(false);
     }
 }
