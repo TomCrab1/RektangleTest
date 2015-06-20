@@ -7,21 +7,9 @@ public class RandomMatchmaker : Photon.MonoBehaviour
     string PlayerName ="";
     bool inGame = false;
     // Use this for initialization
-   public void Connect(string Col)
+   public void Connect(Color Col)
     {
-        switch (Col)
-        {
-            case "red":
-                col = Color.red;
-                break;
-            case "blue":
-                col = Color.blue;
-                break;
-            case "green":
-                col = Color.green;
-                break;
-        }
-     
+        col = Col;
         PhotonNetwork.ConnectUsingSettings("0.1");
         inGame = true;
     }
