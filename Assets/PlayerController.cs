@@ -4,12 +4,21 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
   public  bool controllable = false;
-
+  public string Name = "test";
+  public Color colour;
+    
 
     // Use this for initialization
     void Start()
     {
-
+      
+    }
+    public void setColour(Color col)
+    {
+        colour = col;
+        Material mat = new Material(GetComponentInChildren<MeshRenderer>().material);
+        mat.color = colour;
+        GetComponentInChildren<MeshRenderer>().material = mat;
     }
 
     // Update is called once per frame
