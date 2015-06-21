@@ -29,4 +29,11 @@ public class GameManager : MonoBehaviour {
         Players.Add(new Player(name, colour, newPlayer));
         return newPlayer;
     }
+    public static GameObject addBullet(float speed, Vector3 dir, Vector3 pos)
+    {
+        GameObject newBullet = PhotonNetwork.Instantiate("Bullet", pos, Quaternion.identity, 0);
+        newBullet.GetComponent<BulletController>().direction = dir;
+        newBullet.GetComponent<BulletController>().speed = speed;
+        return newBullet;
+    }
 }
